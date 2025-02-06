@@ -1,0 +1,23 @@
+-----------------How to Set vlan 2 name
+
+Switch(config)#vlan 2
+Switch(config-vlan)#name sarik
+
+----------------How to check VLAN ports connectivity
+
+ Switch#show vlan 
+
+-----------------Saving config data in device
+
+Switch#copy running-config startup-config
+
+-----------------How to set range of VLAN in desired vlans
+
+Switch(config)#interface range fa0/13-24
+Switch(config-if-range)#switchport mode access 
+Switch(config-if-range)#switchport access vlan 2
+
+-------------------Giving connectivity of trunk port, write this command in both switches.
+
+Switch(config)#int fa0/24
+Switch(config-if)#switchport mode trunk
